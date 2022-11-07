@@ -6,7 +6,18 @@ if day_of_week == 'm':
     print("I hate mondays, am i right?")
 else:
     print(" At least it's  not monday.")
+    
+#day_of_week =input('enter day of week')
+#if day_of_week.strip().lower == 'monday':
+    #print("its monday")
+#else:
+    #print("not weekend")
+#strip to remove spaces
+
 #b-----------------------
+
+
+# i took the longer method for fun.
 day_of_week = input( "What day of the week is it * using m, t, w, th, f, sa, su *" )
 
 if day_of_week == 'm':
@@ -21,10 +32,25 @@ elif day_of_week == 'f':
     print("TGIF!!!") 
 else:
     print("The weekend couldn't come fast enough")
+
+#if day_of_week in ['saturday,'sunday]:
+    
+#c
+hours_w = 60
+hour_r = 20
+week_pay = 0
+
+if hours_w <= 40:
+    week_pay = hours_w * hour_r
+    print('Your weekly pay is {}.'.format(week_pay)) 
+else: 
+    week_pay = 40 * hour_r + (hours_w - 40) * hour_r * 1.5
+    print("Your weekly pay is {}.".format(week_pay))
     
 #2----------------------
 #a
-i = 5
+
+i = 5 
 while i <= 15:
     print (i)
     i += 1
@@ -33,10 +59,11 @@ while i <= 15:
 i = 0
 while i <= 100:
     print(i)
+    #add two to i
     i += 2
 #---
 i = 100
-while i >= -15:
+while i >= -10:
     print(i)
     i -= 5
 #---
@@ -59,18 +86,24 @@ your_num = int(input("What number would you like to see multiplied?"))
 
 for n in range (1,11):
     print (your_num,' x ', n ,' = ',your_num * n)
- 
+
+#print(f'{your_num} x {i} = {your_num * i}')
     
 #c---
 n = 9
 
-for x in range(1, n+1):
-   for y in range (1,x+1):
-        print (x) \n
+for i in range(1, n+1):
+   print(i * str(i))
         
-print()
+
  
  #c---
+i = 9
+while i >= 0:
+    print(i)
+    i -= 1
+     
+ #--
 neg_num = int(input("a NEGATIVE NUM please?"))
 
 
@@ -106,14 +139,16 @@ while i < 2:
     
     else: 
         break
-
-for i in range (odd_num):
-    if i % 2 == 1:
-        if i == 27:
-            print('yikes! skipping number : 27')
+counter = 1
+while counter < 50 :
+    counter +=2
+    if counter % 2 == 1:
+        if counter == odd_num:
+            print(f'yikes! skipping number : {odd_num}')
     
             continue
-    print(i)
+    
+    print(counter)
     
 #3-----------
 i = 1
@@ -172,12 +207,14 @@ for i in range(1,101):
 
 def go():
     stop = int(input("Choose a stopping point."))
+    print("here's your table")
+    print('----- | ----- | -----')
     
     for x in range(1,stop+1):
      square = x * x
      cube = x * x * x
      print(F'{x}  |\t{square}  |\t{cube} ')
-
+     
 go()
     
 again = str(input('would you like to go again?y/n'))
@@ -206,13 +243,16 @@ def test_res():
         else:
             print('F')
 
-    again = str(input("Do you need any more evals? y/n?"))
+    maybe = str(input("Do you need any more evals? y/n?"))
+    #increases what can be read
+    again = maybe.lower().strip()
+    #asking to run the functionn
     if again == 'y':
         test_res()
     else:
         print('Stay Sharp!')
-        
-
+    
+#starts the program  
 test_res()
 
 #----
@@ -227,7 +267,8 @@ ls_book = [ {'title': 'jam', 'author':'micheal bay','genre':'spook'},
             {'title': 'how george washington defeated anakin', 'author':'J.R.T','genre':'nonfiction'},
             
             {'title': 'space admin', 'author':'usaf','genre':'military'} ]
-           
+        
+ls_book   
 
 #---
 g_p = (str(input("pick a genre ")))
