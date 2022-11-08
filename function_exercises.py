@@ -1,14 +1,12 @@
 # would like to use regexp
 import re
 
-
 def is_two(x):
     #testing to see if x arg is equivalent to 2 or two
     if x == 2 or x == "two":
          result = True
          #send back the answer
          return result
-    
           
 #2---
 def is_vowel(x):
@@ -18,21 +16,35 @@ def is_vowel(x):
     if x == 'a' or x == 'e' or x == 'i' or x =='o' or x == 'u':
         result = True
         return result
+    else:
+        
+        result = False
+        return result
+
 
 #3---
 def is_constant(x):
+    #lower case to avoid mistakes
     x = x.lower()
-    #similar to above, but making sure x does not = vowel
-    if x != 'a' or x != 'e' or x != 'i' or x !='o' or x != 'u':
+    # checking to see = any vowerl
+    if x == 'a' or x == 'e' or x == 'i' or x =='o' or x == 'u':
+        result = False
+        return result
+    else:
+        
         result = True
         return result
+
 
 #4---
 def is_word(char):
     # accepts string and if string index 0 is not a vowel, capitalize it
-    if char[0] != 'a' or char[0] != 'e' or char[0] != 'i' or char[0] !='o' or char[0] != 'u':
+    if char[0] == 'a' or char[0] == 'e' or char[0] == 'i' or char[0] =='o' or char[0] == 'u':
+        return char
+    else:
         up_char = char.capitalize()
         return up_char
+
 
 #5-----
 def calculate_tip(per,check):
@@ -46,10 +58,12 @@ def calculate_tip(per,check):
 #6-----
 def apply_discount(op,dp):
     #discount price * original price
-    sub_amt = dp * op
+    dp_per = dp/100
     #original price - subtract amount for the price you will pay
-    new_price =(op - sub_amt)
+    
+    new_price = (1-dp_per)* op
     return new_price
+
 
 #7----
 def handle_commas(char):
@@ -101,7 +115,8 @@ def cumulative_sum(list):
     #take len of input list and store in variable
     length= len(list)
     #apply list attributes for the range of length + 1, sum, then apply to new list.
-    new_ls = [sum(list[0:x:1]) for x in range(0,length+1)]
+    new_ls = [sum(list[0:x:1]) for x in range(1,length+1)]
     
     return new_ls
+
     
